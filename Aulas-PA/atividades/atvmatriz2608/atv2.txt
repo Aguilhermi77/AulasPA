@@ -1,0 +1,67 @@
+import javax.swing.JOptionPane;
+void main() {
+//declaraçao matriz A
+    int[][] A = new int[2][4];
+    //declaraçao matriz B
+    int[][] B = new int[4][2];
+
+    //  Preenchendo a Matriz A
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 4; j++) {
+            String entrada = JOptionPane.showInputDialog(
+                    null,
+                    "Matriz A - Digite o valor para a posição [" + i + "][" + j + "]:");
+            A[i][j] = Integer.parseInt(entrada);
+        }
+    }
+
+    //  Preenchendo a Matriz B
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 2; j++) {
+            String entrada = JOptionPane.showInputDialog(
+                    null,
+                    "Matriz B - Digite o valor para a posição [" + i + "][" + j + "]:");
+            B[i][j] = Integer.parseInt(entrada);
+        }
+    }
+
+    // Matriz C armazenará o resultado da multiplicação
+    int[][] C = new int[2][2];
+
+    // Realiza a multiplicação das matrizes
+    // Regra: linha da matriz A × coluna da matriz B
+    for (int i = 0; i < 2; i++) {
+
+        for (int j = 0; j < 2; j++) {
+
+            for (int k = 0; k < 4; k++) {
+
+                C[i][j] += A[i][k] * B[k][j];
+            }
+        }
+    }
+    //exibe matriz A
+    System.out.println("Matriz A:");
+    for (int i = 0; i<2; i++){
+        for (int j = 0; j<4; j++){
+            System.out.print(A[i][j] +"\t");
+        }
+        System.out.println();
+    }
+    //exibe matriz B
+    System.out.println("Matriz B:");
+    for (int i = 0; i<4; i++){
+        for (int j = 0; j<2; j++){
+            System.out.print(B[i][j] +"\t");
+        }
+        System.out.println();
+    }
+    //exibe matriz C
+    System.out.println("Matriz C:");
+    for (int i = 0; i<2; i++){
+        for (int j = 0; j<2; j++){
+            System.out.print(C[i][j] +"\t");
+        }
+        System.out.println();
+    }
+}
